@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "callable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ElevatedUnderdogs/Callable.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "398b51754b3fb3566762eca065d31e8da8b4e3c2"
+      }
+    },
+    {
+      "identity" : "tablemvvm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ElevatedUnderdogs/TableMVVM.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "30501d27de73860e7df680c8d8170e87c955723d"
+      }
+    }
+  ],
+  "version" : 2
+}
