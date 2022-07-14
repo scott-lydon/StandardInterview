@@ -7,22 +7,33 @@
 
 import UIKit
 import TableMVVM
-import Callable
-
-struct Profile {
-    var name: String
-    var url: String
-}
 
 class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
 
-    var items: [Profile] = []
+    var items: [Profile] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    var tasks: [Int: URLSessionDownloadTask] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
+        "https://random.dog/doggos"
+            .url?
+            .request?
+            .callPersistCodable(fetchStrategy: .alwaysUseCacheIfAvailable) { [weak self] (ids: [String]?) in
+            self?.items = ids?
+                .map { Profile($0)}
+                .filter { $0.name.components(separatedBy: ".").last != "mp4"} ?? self?.items ?? []
+        }
     }
 }
 
@@ -36,5 +47,16 @@ extension ViewController: UITableViewDataSource {
         let cell: ProfileCell? = tableView.dequeueReusableCell(withIdentifier: ProfileCell.className, for: indexPath) as? ProfileCell
         cell?.set(item: items[indexPath.row])
         return cell ?? .init()
+    }
+}
+
+extension ViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print(Thread.isMainThread)
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        print(Thread.isMainThread)
     }
 }

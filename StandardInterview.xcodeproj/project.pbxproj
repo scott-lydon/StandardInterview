@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		757D9FC2287FC3C600842E34 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D9FC1287FC3C600842E34 /* UIImage.swift */; };
+		757D9FC4287FC3D700842E34 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D9FC3287FC3D700842E34 /* CGRect.swift */; };
 		75836366287B8F4C00D7D0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836365287B8F4C00D7D0F3 /* AppDelegate.swift */; };
 		75836368287B8F4C00D7D0F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836367287B8F4C00D7D0F3 /* SceneDelegate.swift */; };
 		7583636A287B8F4C00D7D0F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836369287B8F4C00D7D0F3 /* ViewController.swift */; };
@@ -16,12 +18,12 @@
 		7583637D287B8F4F00D7D0F3 /* StandardInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7583637C287B8F4F00D7D0F3 /* StandardInterviewTests.swift */; };
 		75836387287B8F4F00D7D0F3 /* StandardInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836386287B8F4F00D7D0F3 /* StandardInterviewUITests.swift */; };
 		75836389287B8F4F00D7D0F3 /* StandardInterviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836388287B8F4F00D7D0F3 /* StandardInterviewUITestsLaunchTests.swift */; };
-		75836397287B9DB900D7D0F3 /* Callable in Frameworks */ = {isa = PBXBuildFile; productRef = 75836396287B9DB900D7D0F3 /* Callable */; };
 		7583639A287B9E5F00D7D0F3 /* TableMVVM in Frameworks */ = {isa = PBXBuildFile; productRef = 75836399287B9E5F00D7D0F3 /* TableMVVM */; };
 		7583639C287BDDF100D7D0F3 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7583639B287BDDF100D7D0F3 /* ImageCache.swift */; };
 		7583639E287BDF3800D7D0F3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7583639D287BDF3800D7D0F3 /* UIImageView.swift */; };
 		758363A0287BDFA800D7D0F3 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7583639F287BDFA800D7D0F3 /* ProfileCell.swift */; };
-		758363A4287BE01600D7D0F3 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 758363A3287BE01600D7D0F3 /* ProfileCell.xib */; };
+		75C20A4D287D3717002D1007 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C20A4C287D3717002D1007 /* Profile.swift */; };
+		75C20A56287E2926002D1007 /* PersistenceCall in Frameworks */ = {isa = PBXBuildFile; productRef = 75C20A55287E2926002D1007 /* PersistenceCall */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		757D9FC1287FC3C600842E34 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		757D9FC3287FC3D700842E34 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		75836362287B8F4C00D7D0F3 /* StandardInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandardInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75836365287B8F4C00D7D0F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75836367287B8F4C00D7D0F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +60,9 @@
 		75836386287B8F4F00D7D0F3 /* StandardInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardInterviewUITests.swift; sourceTree = "<group>"; };
 		75836388287B8F4F00D7D0F3 /* StandardInterviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardInterviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7583639B287BDDF100D7D0F3 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		7583639D287BDF3800D7D0F3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		7583639D287BDF3800D7D0F3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 1; path = UIImageView.swift; sourceTree = "<group>"; };
 		7583639F287BDFA800D7D0F3 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		758363A3287BE01600D7D0F3 /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		75C20A4C287D3717002D1007 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75836397287B9DB900D7D0F3 /* Callable in Frameworks */,
+				75C20A56287E2926002D1007 /* PersistenceCall in Frameworks */,
 				7583639A287B9E5F00D7D0F3 /* TableMVVM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,10 +118,13 @@
 				75836365287B8F4C00D7D0F3 /* AppDelegate.swift */,
 				75836367287B8F4C00D7D0F3 /* SceneDelegate.swift */,
 				75836369287B8F4C00D7D0F3 /* ViewController.swift */,
+				75C20A4C287D3717002D1007 /* Profile.swift */,
 				7583639F287BDFA800D7D0F3 /* ProfileCell.swift */,
-				758363A3287BE01600D7D0F3 /* ProfileCell.xib */,
 				7583639D287BDF3800D7D0F3 /* UIImageView.swift */,
+				757D9FC3287FC3D700842E34 /* CGRect.swift */,
+				757D9FC1287FC3C600842E34 /* UIImage.swift */,
 				7583639B287BDDF100D7D0F3 /* ImageCache.swift */,
+				7583636E287B8F4F00D7D0F3 /* Assets.xcassets */,
 				7583636B287B8F4C00D7D0F3 /* Main.storyboard */,
 				75836370287B8F4F00D7D0F3 /* LaunchScreen.storyboard */,
 				75836373287B8F4F00D7D0F3 /* Info.plist */,
@@ -128,7 +135,6 @@
 		7583637B287B8F4F00D7D0F3 /* StandardInterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				7583636E287B8F4F00D7D0F3 /* Assets.xcassets */,
 				7583637C287B8F4F00D7D0F3 /* StandardInterviewTests.swift */,
 			);
 			path = StandardInterviewTests;
@@ -160,8 +166,8 @@
 			);
 			name = StandardInterview;
 			packageProductDependencies = (
-				75836396287B9DB900D7D0F3 /* Callable */,
 				75836399287B9E5F00D7D0F3 /* TableMVVM */,
+				75C20A55287E2926002D1007 /* PersistenceCall */,
 			);
 			productName = StandardInterview;
 			productReference = 75836362287B8F4C00D7D0F3 /* StandardInterview.app */;
@@ -236,8 +242,8 @@
 			);
 			mainGroup = 75836359287B8F4C00D7D0F3;
 			packageReferences = (
-				75836395287B9DB900D7D0F3 /* XCRemoteSwiftPackageReference "Callable" */,
 				75836398287B9E5F00D7D0F3 /* XCRemoteSwiftPackageReference "TableMVVM" */,
+				75C20A54287E2926002D1007 /* XCRemoteSwiftPackageReference "PersistenceCall" */,
 			);
 			productRefGroup = 75836363287B8F4C00D7D0F3 /* Products */;
 			projectDirPath = "";
@@ -256,7 +262,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75836372287B8F4F00D7D0F3 /* LaunchScreen.storyboard in Resources */,
-				758363A4287BE01600D7D0F3 /* ProfileCell.xib in Resources */,
 				7583636F287B8F4F00D7D0F3 /* Assets.xcassets in Resources */,
 				7583636D287B8F4C00D7D0F3 /* Main.storyboard in Resources */,
 			);
@@ -284,10 +289,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7583636A287B8F4C00D7D0F3 /* ViewController.swift in Sources */,
+				757D9FC2287FC3C600842E34 /* UIImage.swift in Sources */,
 				7583639E287BDF3800D7D0F3 /* UIImageView.swift in Sources */,
 				75836366287B8F4C00D7D0F3 /* AppDelegate.swift in Sources */,
+				75C20A4D287D3717002D1007 /* Profile.swift in Sources */,
 				758363A0287BDFA800D7D0F3 /* ProfileCell.swift in Sources */,
 				7583639C287BDDF100D7D0F3 /* ImageCache.swift in Sources */,
+				757D9FC4287FC3D700842E34 /* CGRect.swift in Sources */,
 				75836368287B8F4C00D7D0F3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,14 +640,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		75836395287B9DB900D7D0F3 /* XCRemoteSwiftPackageReference "Callable" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ElevatedUnderdogs/Callable.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		75836398287B9E5F00D7D0F3 /* XCRemoteSwiftPackageReference "TableMVVM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ElevatedUnderdogs/TableMVVM.git";
@@ -648,18 +648,26 @@
 				kind = branch;
 			};
 		};
+		75C20A54287E2926002D1007 /* XCRemoteSwiftPackageReference "PersistenceCall" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scott-lydon/PersistenceCall.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		75836396287B9DB900D7D0F3 /* Callable */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 75836395287B9DB900D7D0F3 /* XCRemoteSwiftPackageReference "Callable" */;
-			productName = Callable;
-		};
 		75836399287B9E5F00D7D0F3 /* TableMVVM */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 75836398287B9E5F00D7D0F3 /* XCRemoteSwiftPackageReference "TableMVVM" */;
 			productName = TableMVVM;
+		};
+		75C20A55287E2926002D1007 /* PersistenceCall */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75C20A54287E2926002D1007 /* XCRemoteSwiftPackageReference "PersistenceCall" */;
+			productName = PersistenceCall;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -3,19 +3,23 @@
 //  StandardInterview
 //
 //  Created by Scott Lydon on 7/10/22.
-//
 
 import UIKit
 
 /// A wrapper to enforce one instance of a thread safe image cache.
-class ImageChache {
+public class ImageChache {
     private init() {}
-    static let shared: ImageChache = .init()
+    static public let shared: ImageChache = .init()
     private var nsCache: NSCache<NSURLRequest, UIImage> = .init()
     public var cacheSize: Int = 100 {
         didSet {
             nsCache.countLimit = cacheSize
         }
+    }
+    
+    public func image(for url: String, maxDimension: CGFloat) -> UIImage? {
+        image(forKey: url + String(maxDimension)) ??
+        image(forKey: url)?.resizeImageProportionately(maxSize: CGSize(width: maxDimension, height: maxDimension))
     }
 
     public func image(forKey key: String) -> UIImage? {
@@ -49,4 +53,3 @@ class ImageChache {
         self.nsCache = .init()
     }
 }
-
