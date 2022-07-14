@@ -92,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		757D9FC5287FEC0C00842E34 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				75C20A4C287D3717002D1007 /* Profile.swift */,
+				7583639F287BDFA800D7D0F3 /* ProfileCell.swift */,
+				757D9FC3287FC3D700842E34 /* CGRect.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		75836359287B8F4C00D7D0F3 = {
 			isa = PBXGroup;
 			children = (
@@ -118,12 +128,10 @@
 				75836365287B8F4C00D7D0F3 /* AppDelegate.swift */,
 				75836367287B8F4C00D7D0F3 /* SceneDelegate.swift */,
 				75836369287B8F4C00D7D0F3 /* ViewController.swift */,
-				75C20A4C287D3717002D1007 /* Profile.swift */,
-				7583639F287BDFA800D7D0F3 /* ProfileCell.swift */,
 				7583639D287BDF3800D7D0F3 /* UIImageView.swift */,
-				757D9FC3287FC3D700842E34 /* CGRect.swift */,
 				757D9FC1287FC3C600842E34 /* UIImage.swift */,
 				7583639B287BDDF100D7D0F3 /* ImageCache.swift */,
+				757D9FC5287FEC0C00842E34 /* Helpers */,
 				7583636E287B8F4F00D7D0F3 /* Assets.xcassets */,
 				7583636B287B8F4C00D7D0F3 /* Main.storyboard */,
 				75836370287B8F4F00D7D0F3 /* LaunchScreen.storyboard */,
