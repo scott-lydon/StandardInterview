@@ -5,8 +5,26 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ElevatedUnderdogs/Callable.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "398b51754b3fb3566762eca065d31e8da8b4e3c2"
+        "revision" : "f44ad68588ec6297235d76ed38494967cab9d611",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "commonextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ElevatedUnderdogs/CommonExtensions.git",
+      "state" : {
+        "revision" : "882f723adfb658a1dab2ef4c84a2c020df7b3ea0",
+        "version" : "4.0.2"
+      }
+    },
+    {
+      "identity" : "persistencecall",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scott-lydon/PersistenceCall.git",
+      "state" : {
+        "revision" : "79bb8d75bbd0081037ece32184c8ed6fa0a36f62",
+        "version" : "1.2.5"
       }
     },
     {

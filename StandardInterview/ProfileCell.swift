@@ -14,6 +14,12 @@ class ProfileCell: UITableViewCell {
 
     func set(item: Profile) {
         label.text = item.name
-        theImageView.setImage(for: item.url) { [weak label] _ in item.name == label?.text }
+        theImageView.setImage(url: item.url)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        theImageView.image = nil
+        label.text = nil
     }
 }
