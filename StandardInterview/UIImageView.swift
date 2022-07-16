@@ -13,7 +13,7 @@ public extension UIImageView {
     /// We get URL created by the system in call
     /// KEY: is the UIImageView address
     /// Value: is the url which has the corresponding data. 
-    private static var viewAddress_imageURL: NSCache<NSString, NSString> = .init()
+    private static var imageURLMatchCache: NSCache<NSString, NSString> = .init()
     
     
     /// <#Description#>
@@ -34,7 +34,7 @@ public extension UIImageView {
         let tmpAddress = String(format: "%p", unsafeBitCast(self, to: Int.self))
         let maxDimension = frame.maxDimension * dimensionMultiplier
         
-        Self.viewAddress_imageURL.setObject(url as NSString, forKey: tmpAddress as NSString)
+        Self.imageURLMatchCache.setObject(url as NSString, forKey: tmpAddress as NSString)
                     
         if let image = ImageChache.shared.image(for: url, maxDimension: maxDimension) ?? placeholderImage {
             self.backgroundColor = nil
@@ -49,7 +49,7 @@ public extension UIImageView {
             guard let image: UIImage = UIImage(data: data)?.resize(maxDimension: maxDimension) else {
                 return
             }
-            if Self.viewAddress_imageURL.object(forKey: tmpAddress as NSString) == url as NSString {
+            if Self.imageURLMatchCache.object(forKey: tmpAddress as NSString) == url as NSString {
                 DispatchQueue.main.async {
                     self?.image = image
                     self?.backgroundColor = .clear
