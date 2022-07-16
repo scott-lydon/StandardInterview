@@ -33,9 +33,6 @@ class ViewController: UIViewController {
             self?.items = ids?
                 .map { Profile($0)}
                 .filter { $0.name.components(separatedBy: ".").last != "mp4"} ?? self?.items ?? []
-            print(self?.items[2].url)
-            print(self?.items[4].url)
-                print("")
         }
     }
 }

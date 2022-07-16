@@ -46,43 +46,24 @@ public extension UIImageView {
             self.backgroundColor = backgroundColor
         }
         
-        if url == "https://random.dog/00b417af-0b5f-42d7-9ad0-6aab6c3db491.jpg" || url == "https://random.dog/027eef85-ccc1-4a66-8967-5d74f34c8bb4.jpg" {
-            print(#line, "we got a intermittently failing url: \(url)")
-        }
         let dataAction: DataAction = { [weak self] data in
             // Resizing the image makes a substantial improvement
             // against choppiness, leads to smoother scrolling.
-            if url == "https://random.dog/00b417af-0b5f-42d7-9ad0-6aab6c3db491.jpg" || url == "https://random.dog/027eef85-ccc1-4a66-8967-5d74f34c8bb4.jpg" {
-                print(#line, "we got a intermittently failing url: \(url)")
-            }
-            guard let image: UIImage = UIImage(data: data),
-                  let resizedImage = image.resize(maxDimension: maxDimension) else {
-                print("we got data, but failed to convert it to an image: \(url)")
+            guard let image: UIImage = UIImage(data: data)?.resize(maxDimension: maxDimension) else {
                 return
-            }
-            if url == "https://random.dog/00b417af-0b5f-42d7-9ad0-6aab6c3db491.jpg" || url == "https://random.dog/027eef85-ccc1-4a66-8967-5d74f34c8bb4.jpg" {
-                print(#line, "we got a intermittently failing url: \(url), tmpAddress: \(tmpAddress), url object: \(Self.imageURLMatchCache.object(forKey: tmpAddress as NSString))")
             }
             if Self.imageURLMatchCache.object(forKey: tmpAddress as NSString) == url as NSString {
                 DispatchQueue.main.async {
-                    if url == "https://random.dog/00b417af-0b5f-42d7-9ad0-6aab6c3db491.jpg" || url == "https://random.dog/027eef85-ccc1-4a66-8967-5d74f34c8bb4.jpg" {
-                        print(#line, "we got a intermittently failing url: \(url)")
-                    }
-                    self?.image = resizedImage
+                    self?.image = image
                     self?.backgroundColor = .clear
                     self?.setNeedsDisplay()
                     self?.setNeedsLayout()
                 }
             }
-//            else {
-//                DispatchQueue.main.async {
-//                    self?.setImage(url: url)
-//                }
-//            }
             // I was tempted to assign the actual image along with the smaller version
             // but I think if I do that it will clog up RAM.
             // I think clogging up ram may cause glitchyness
-            ImageChache.shared.set(resizedImage, forKey: url + String(maxDimension))
+            ImageChache.shared.set(image, forKey: url + String(maxDimension))
         }
         if let interceptor = urlDownloadTaskCache.object(forKey: url as NSString) {
             interceptor.dataAction = dataAction
@@ -97,19 +78,11 @@ public extension UIImageView {
         urlDownloadTaskCache.setObject(interceptor, forKey: url as NSString)
     }
 }
-//
+
 //extension ImageChache {
-//
+//    
 //    func prefetch(url: String, maxDimension: CGFloat) {
-//        guard ImageChache.shared.image(for: url, maxDimension: maxDimension) == nil else { return }
-//        let interceptor: DownloadTaskInterceptor = .init()
-//        interceptor.downloadTask = url.url?.request?.callPersistDownloadData(fetchStrategy: .alwaysUseCacheIfAvailable)
-//        urlDownloadTaskCache.setObject(interceptor, forKey: url as NSString)
-//    }
-//
-//    func cancel(url: String, maxDimension: CGFloat) {
-//        urlDownloadTaskCache.object(forKey: url as NSString)?.downloadTask?.cancel()
-//        urlDownloadTaskCache.removeObject(forKey: url as NSString)
+//        
 //    }
 //}
 
