@@ -13,8 +13,10 @@ public extension UIImageView {
     /// We get URL created by the system in call
     /// KEY: is the UIImageView address
     /// Value: is the url which has the corresponding data. 
-    private static var viewAddress_imageURL: NSCache<NSString, NSString> = .init()
+    private static var imageURLMatchCache: NSCache<NSString, NSString> = .init()
     
+    
+ 
     
     /// <#Description#>
     /// - Parameters:
@@ -34,7 +36,7 @@ public extension UIImageView {
         let tmpAddress = String(format: "%p", unsafeBitCast(self, to: Int.self))
         let maxDimension = frame.maxDimension * dimensionMultiplier
         
-        Self.viewAddress_imageURL.setObject(url as NSString, forKey: tmpAddress as NSString)
+        Self.imageURLMatchCache.setObject(url as NSString, forKey: tmpAddress as NSString)
                     
         if let image = ImageChache.shared.image(for: url, maxDimension: maxDimension) ?? placeholderImage {
             self.backgroundColor = nil
@@ -44,12 +46,13 @@ public extension UIImageView {
             self.backgroundColor = backgroundColor
         }
         
-        url.url?.request?.callPersistDownloadData(fetchStrategy: .alwaysUseCacheIfAvailable) {
-            [weak self] data in
+        let dataAction: DataAction = { [weak self] data in
+            // Resizing the image makes a substantial improvement
+            // against choppiness, leads to smoother scrolling.
             guard let image: UIImage = UIImage(data: data)?.resize(maxDimension: maxDimension) else {
                 return
             }
-            if Self.viewAddress_imageURL.object(forKey: tmpAddress as NSString) == url as NSString {
+            if Self.imageURLMatchCache.object(forKey: tmpAddress as NSString) == url as NSString {
                 DispatchQueue.main.async {
                     self?.image = image
                     self?.backgroundColor = .clear
@@ -57,10 +60,42 @@ public extension UIImageView {
                     self?.setNeedsLayout()
                 }
             }
-            /// I was tempted to assign the actual image along with the smaller version, but I think if I do that it will clog up RAM.
-            /// I think clogging up ram may cause glitchyness
+            // I was tempted to assign the actual image along with the smaller version
+            // but I think if I do that it will clog up RAM.
+            // I think clogging up ram may cause glitchyness
             ImageChache.shared.set(image, forKey: url + String(maxDimension))
         }
+        if let interceptor = urlDownloadTaskCache.object(forKey: url as NSString) {
+            interceptor.dataAction = dataAction
+            return
+        }
+        let interceptor: DownloadTaskInterceptor = .init()
+        interceptor.dataAction = dataAction
+        interceptor.downloadTask = url.url?.request?.callPersistDownloadData(fetchStrategy: .alwaysUseCacheIfAvailable) { data in
+            interceptor.dataAction?(data)
+        }
+        interceptor.downloadTask?.resume()
+        urlDownloadTaskCache.setObject(interceptor, forKey: url as NSString)
     }
 }
-    
+
+//extension ImageChache {
+//    
+//    func prefetch(url: String, maxDimension: CGFloat) {
+//        
+//    }
+//}
+
+
+typealias DataAction = (Data) -> Void
+
+class DownloadTaskInterceptor {
+    var dataAction: DataAction?
+    var downloadTask: URLSessionDownloadTask?
+}
+
+var urlDownloadTaskCache: NSCache<NSString, DownloadTaskInterceptor> = .init()
+
+/*
+ 
+ */
