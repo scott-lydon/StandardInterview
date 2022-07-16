@@ -28,6 +28,10 @@ extension UIImage {
         return resizeExact(targetSize: newSize)
     }
     
+    func resize(maxDimension: CGFloat) -> UIImage? {
+        resizeImageProportionately(maxSize: .init(width: maxDimension, height: maxDimension))
+    }
+    
     func resize(to multiplier: Double) -> UIImage? {
         resizeExact(targetSize: CGSize(width: size.width * multiplier, height: size.height * multiplier))
     }
