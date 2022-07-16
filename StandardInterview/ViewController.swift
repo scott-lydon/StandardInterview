@@ -24,7 +24,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.dataSource = self
         tableView.prefetchDataSource = self
         "https://random.dog/doggos"
@@ -54,21 +53,10 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        DispatchQueue.global(qos: .background).async {
-            for indexPath in indexPaths {
-                // indexPath ->
-                // try getting image dimensions
-                // url using indexPath.
-            }
-        }
+        print(Thread.isMainThread)
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        DispatchQueue.global(qos: .background).async {
-            for indexPath in indexPaths {
-                IndexPathDataTaskCache.shared[indexPath]?.cancel()
-                IndexPathDataTaskCache.shared[indexPath] = nil
-            }
-        }
+        print(Thread.isMainThread)
     }
 }

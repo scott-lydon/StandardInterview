@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		757D9FC2287FC3C600842E34 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D9FC1287FC3C600842E34 /* UIImage.swift */; };
 		757D9FC4287FC3D700842E34 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D9FC3287FC3D700842E34 /* CGRect.swift */; };
-		757DA07828824CEE00842E34 /* IndexPathDataTaskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757DA07728824CEE00842E34 /* IndexPathDataTaskCache.swift */; };
 		75836366287B8F4C00D7D0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836365287B8F4C00D7D0F3 /* AppDelegate.swift */; };
 		75836368287B8F4C00D7D0F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836367287B8F4C00D7D0F3 /* SceneDelegate.swift */; };
 		7583636A287B8F4C00D7D0F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836369287B8F4C00D7D0F3 /* ViewController.swift */; };
@@ -47,7 +46,6 @@
 /* Begin PBXFileReference section */
 		757D9FC1287FC3C600842E34 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		757D9FC3287FC3D700842E34 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
-		757DA07728824CEE00842E34 /* IndexPathDataTaskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPathDataTaskCache.swift; sourceTree = "<group>"; };
 		75836362287B8F4C00D7D0F3 /* StandardInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandardInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75836365287B8F4C00D7D0F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75836367287B8F4C00D7D0F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				7583639D287BDF3800D7D0F3 /* UIImageView.swift */,
 				757D9FC1287FC3C600842E34 /* UIImage.swift */,
 				7583639B287BDDF100D7D0F3 /* ImageCache.swift */,
-				757DA07728824CEE00842E34 /* IndexPathDataTaskCache.swift */,
 				757D9FC5287FEC0C00842E34 /* Helpers */,
 				7583636E287B8F4F00D7D0F3 /* Assets.xcassets */,
 				7583636B287B8F4C00D7D0F3 /* Main.storyboard */,
@@ -302,7 +299,6 @@
 				7583636A287B8F4C00D7D0F3 /* ViewController.swift in Sources */,
 				757D9FC2287FC3C600842E34 /* UIImage.swift in Sources */,
 				7583639E287BDF3800D7D0F3 /* UIImageView.swift in Sources */,
-				757DA07828824CEE00842E34 /* IndexPathDataTaskCache.swift in Sources */,
 				75836366287B8F4C00D7D0F3 /* AppDelegate.swift in Sources */,
 				75C20A4D287D3717002D1007 /* Profile.swift in Sources */,
 				758363A0287BDFA800D7D0F3 /* ProfileCell.swift in Sources */,
@@ -493,7 +489,6 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +517,6 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -667,7 +661,7 @@
 			repositoryURL = "https://github.com/scott-lydon/PersistenceCall.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.0;
+				minimumVersion = 1.2.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
