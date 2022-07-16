@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scott-lydon/PersistenceCall.git",
       "state" : {
-        "revision" : "79bb8d75bbd0081037ece32184c8ed6fa0a36f62",
-        "version" : "1.2.5"
+        "revision" : "7e0c514561925d246a7132acdcf0378f7dc3e7df",
+        "version" : "1.4.0"
       }
     },
     {

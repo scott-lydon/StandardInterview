@@ -17,10 +17,20 @@ public class ImageChache {
         }
     }
     
-    public func image(for url: String, maxDimension: CGFloat) -> UIImage? {
-        image(forKey: url + String(maxDimension)) ??
-        image(forKey: url)?.resizeImageProportionately(maxSize: CGSize(width: maxDimension, height: maxDimension))
+    func cancel(for url: String) {
+        
     }
+    
+    func prefetch(for url: String) {
+        guard image(forKey: url) == nil else { return }
+        
+        
+    }
+    
+//    public func image(for url: String, maxDimension: CGFloat) -> UIImage? {
+//        image(forKey: url + String(maxDimension)) ??
+//        image(forKey: url)?.resizeImageProportionately(maxSize: CGSize(width: maxDimension, height: maxDimension))
+//    }
 
     public func image(forKey key: String) -> UIImage? {
         guard let url = URL(string: key) else { return nil }
